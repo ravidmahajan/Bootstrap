@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h2>User Login Form</h2>
+            </div>
+            <div class="card-body">
+                <form action="#" method="POST">
+                    <!-- Row#1 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="userId">User Name</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" name="userId" id="userId" class="form-control" />
+                        </div>
+                        <div class="col-4">
+                            <span id="userIdError"></span>
+                        </div>
+                    </div>
+                    <!-- Row#2 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label>Password</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="password" name="upwd" id="upwd" class="form-control" />
+                        </div>
+                        <div class="col-4">
+                            <span id="upwdError"></span>
+                        </div>
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-success" />
+                </form>
+            </div>
+            <!-- card body end -->
+            <div class="card-footer bg-info text-center">
+                <span class="text-white">Logout successful</span>
+            </div>
+
+        </div>
+        <!-- card end -->
+    </div>
+    <!-- container end -->
+</body>
+
+</html>
