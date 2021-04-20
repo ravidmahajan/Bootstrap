@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>Student Form</h2>
+        <form action="#" method="POST">
+            <!-- Row#1 -->
+            <div class="row">
+                <div class="col-3">
+                    <label for="stdId">Student Id</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="stdId" id="stdId" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <span id="stdIdError"></span>
+                </div>
+            </div>
+            <!-- Row#2 -->
+            <div class="row">
+                <div class="col-3">
+                    <label for="stdName">Student Name</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="stdName" id="stdName" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <span id="stdNameError"></span>
+                </div>
+            </div>
+            <!-- Row#3 -->
+            <div class="row">
+                <div class="col-3">
+                    <label for="stdFee">Student Fees</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="stdFee" id="stdFee" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <span id="stdFeeError"></span>
+                </div>
+            </div>
+            <!-- Row#4 -->
+            <div class="row">
+                <div class="col-3">
+                    <label for="stdCourse">Student Course</label>
+                </div>
+                <div class="col-5">
+                    <select name="stdCourse" id="stdCourse" class="form-control">
+                        <option value="Arts">Arts</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Science">Science</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <span id="stdCourseError"></span>
+                </div>
+            </div>
+            <input type="submit" value="Add details" class="btn btn-success" />
+        </form>
+    </div>
+</body>
+
+</html>
