@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <style>
+        .three {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Welcome to Jquery</h1>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            alert('Welcome to jqery');
+        });
+    </script> -->
+    <p id="one">Hello ID example</p>
+    <p title="two">Hello Attribute Example</p>
+    <p class="three">Hello class Example</p>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            alert($("#one").text());
+            alert($("[title='two']").text());
+            // alert($('[title="two"]').text());
+            alert($(".three").text());
+        });
+    </script>
+</body>
+
+</html>

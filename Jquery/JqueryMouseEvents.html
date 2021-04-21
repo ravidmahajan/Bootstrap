@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+    <h1 id="sample">Welcome to JQUERY</h1>
+    <h1 id="test">Welcome to JQUERY#2</h1>
+    <h1 id="a">Welcome to JQUERY#3</h1>
+    <h1 id="b">Welcome to JQUERY#4</h1>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sample").click(function() {
+                alert('mouse clicked');
+            });
+
+            $("#test").dblclick(function() {
+                alert('mouse double clicked');
+            });
+
+            $("#a").mouseenter(function() {
+                alert('mouse enter');
+            });
+
+            $("#b").mouseleave(function() {
+                alert('mouse leave');
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

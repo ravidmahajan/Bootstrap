@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+    <p id="a"></p>
+    <p id="b"></p>
+    <h1 id="one"></h1>
+    <h2 id="two">Hi Data</h2>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#a").text("Hello <b>welcome all</b>");
+            $("#b").html("Hello <b>welcome all</b>");
+            $("one").text("Hello title Welcome");
+            alert($('two').text());
+        });
+    </script>
+</body>
+
+</html>
