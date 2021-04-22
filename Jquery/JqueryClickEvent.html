@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+    <h1 id="data">Welcome to jquery</h1>
+    <input type="submit" value="Show" id="show">
+    <input type="submit" value="Hide" id="hide">
+    <input type="submit" value="Toggle" id="toggle">
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $("#data").hide();
+            })
+
+            $("#show").click(function() {
+                $("#data").show();
+            })
+
+            $("#toggle").click(function() {
+                $("#data").toggle();
+            })
+
+
+
+        });
+    </script>
+</body>
+
+</html>
