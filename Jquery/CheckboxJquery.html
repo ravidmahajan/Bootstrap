@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h3>Employee Form</h3>
+        <form id="myForm1" action="#" method="POST">
+            <div class="row">
+                <div class="col-3">
+                    <label>Languages</label>
+                </div>
+                <div class="col-4">
+                    <input type="checkbox" name="empLang" id="e1" value="ENG" /> ENG
+                    <input type="checkbox" name="empLang" id="e2" value="HIN" /> HIN
+                    <input type="checkbox" name="empLang" id="e3" value="TEL" /> TEL
+                    <input type="checkbox" name="empLang" id="e4" value="MAR" /> MAR
+                </div>
+                <div class="col-5">
+                    <span id="empLangError"></span>
+                </div>
+            </div>
+            <input type="submit" value="Test" class="btn btn-info" />
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // hide error section
+            $("#empLangError").hide();
+
+            // define error variable
+            var empLangError = false;
+
+            // validatie function
+            function validate_empLang() {
+                // get count of selected checkboxes
+                var len = $('[name="empLang"]:checked').length;
+                if (len == 0) {
+                    $("#empLangError").show();
+                    $("#empLangError").html("*Please choose one <b>Language</b>");
+                    $("#empLangError").css('color', 'red');
+                    empLangError = false;
+                } else {
+                    $("#empLangError").hide();
+                    empLangError = true;
+                }
+                return empLangError;
+            }
+
+            // link with action event
+            $('[name="empLang"]').click(function() {
+                validate_empLang();
+            });
+
+            $("#myForm1").submit(function() {
+                validate_empLang();
+                if (empLangError) return true;
+                else return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

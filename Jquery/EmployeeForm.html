@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h1>Login page</h1>
+            </div>
+            <div class="card-body">
+                <form action="#" method="post" id="myLoginForm">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="col-4"><input type="text" name="username" id="username" class="form-control" /></div>
+                        <div class="col-5">
+                            <span id="usernameError"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="col-4"><input type="password" name="password" id="password" class="form-control"></div>
+                        <div class="col-5">
+                            <span id="passwordError"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" value="Login" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //1. Hide Error section
+            $("#usernameError").hide();
+            $("#passwordError").hide();
+
+            //2. Define Error variable
+            var usernameError = false;
+            var passwordError = false;
+
+            //3. define validate function
+            function validate_username() {
+                //read form value
+                var val = $("#username").val();
+                if (val == '') { //not valid
+                    $("#usernameError").show();
+                    $("#usernameError").html("*Please Enter <b> Username<b>");
+                    $("#usernameError").css('color', 'red');
+                    usernameError = false;
+                } else { //valid
+                    $("#usernameError").hide();
+                    usernameError = true;
+                }
+
+                return usernameError;
+            }
+
+            function validate_password() {
+                //1. read form input
+                var val = $("#password").val();
+                //2. check empty or not
+                if (val == '') {
+                    $("#passwordError").show();
+                    $("#passwordError").html("*Please Enter <b>Password</b>");
+                    $("#passwordError").css('color', 'red');
+                    passwordError = false;
+                } else {
+                    $("#passwordError").hide();
+                    passwordError = true;
+                }
+                return passwordError;
+            }
+
+            //4. link with action-event
+            $("#username").keyup(function() {
+                validate_username();
+            });
+            $("#password").keyup(function() {
+                validate_password();
+            })
+
+            //on form submit
+            $("#myLoginForm").submit(function() {
+                validate_username();
+                validate_password();
+
+                if (usernameError && passwordError)
+                    return true; //submit form
+                else
+                    return false; //do not submit form
+            });
+        });
+    </script>
+</body>
+
+</html>

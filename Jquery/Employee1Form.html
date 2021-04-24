@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Employee Register Form</h3>
+        <form action="#" method="post" id="myEmpForm">
+            <div class="row">
+                <div class="col-3">
+                    <label for="empName">Employee Name</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" name="empName" id="empName" class="form-control">
+                </div>
+                <div class="col-5">
+                    <span id="empNameError"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label for="empSal">Employee Salary</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" name="empSal" id="empSal" class="form-control">
+                </div>
+                <div class="col-5">
+                    <span id="empSalError"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label for="empDept">Employee Salary</label>
+                </div>
+                <div class="col-4">
+                    <select name="empDept" id="empDept" class="form-control">
+                        <option value="">-Select-</option>
+                        <option value="DEV">DEV</option>
+                        <option value="QA">QA</option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <span id="empDeptError"></span>
+                </div>
+            </div>
+            <input type="submit" value="Register" class="btn btn-success">
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#empNameError").hide();
+            $("#empSalError").hide();
+            $("#empDeptError").hide();
+
+
+            var empNameError = false;
+            var empSalError = false;
+            var empDeptError = false;
+
+            function validate_empName() {
+                var val = $("#empName").val();
+                if (val == '') {
+                    $("#empNameError").show();
+                    $("#empNameError").html("*<b>Name</b> cannot be empty");
+                    $("#empNameError").css('color', 'red');
+                    empNameError = false;
+                } else {
+                    $("#empNameError").hide();
+                    empNameError = true;
+                }
+
+                return empNameError;
+            }
+
+            function validate_empDept() {
+                var val = $("#empDept").val();
+                if (val == '') {
+                    $("#empDeptError").show();
+                    $("#empDeptError").html("*Select one <b>Department</b>");
+                    $("#empDeptError").css('color', 'red');
+                    empDeptError = false;
+                } else {
+                    $("#empDeptError").hide();
+                    empDeptError = true;
+                }
+
+                return empDeptError;
+            }
+
+            function validate_empSal() {
+                var val = $("#empSal").val();
+                if (val == '') {
+                    $("#empSalError").show();
+                    $("#empSalError").html("*<b>Salary</b> can not be empty");
+                    $("#empSalError").css('color', 'red');
+                    empSalError = false;
+                } else {
+                    $("#empSalError").hide();
+                    empSalError = true;
+                }
+
+                return empSalError;
+            }
+
+            $("#empName").keyup(function() {
+                validate_empName();
+            })
+
+            $("#empSal").keyup(function() {
+                validate_empSal();
+            })
+
+            $("#empDept").change(function() {
+                validate_empDept();
+            })
+
+            $("#myEmpForm").submit(function() {
+                validate_empName();
+                validate_empSal();
+                validate_empDept();
+
+                if (empNameError && empSalError && empDeptError) {
+
+                    return true
+                } else {
+                    return false;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
